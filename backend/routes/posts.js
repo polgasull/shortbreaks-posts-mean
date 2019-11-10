@@ -54,7 +54,10 @@ router.post("", multer({storage: storage}).single("image"), (req, res, next) => 
   post.save().then(createdPost => {
     res.status(201).json({
       message: "Post added successfully!",
-      postId: createdPost._id
+      post: {
+        ...createdPost,
+        id: createdPost._id,
+      }
     });
   }); 
 });
