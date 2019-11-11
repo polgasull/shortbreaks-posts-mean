@@ -26,10 +26,23 @@ const storage = multer.diskStorage({
 });
 
 router.get("", (req, res, next) => {
-  Post.find().then(documents => {
+  const pageSize = +req.query.pagesize; // + symbol converts string to number. 
+  const currentPage = +req.query.page;
+  const postQuery = Post.find();
+  let fetchedPosts;
+  if (pageSize && postQuery) {
+    postQuery
+    .skip(pageSize * (currentPage - 1))
+    .limit(pageSize) // must be a number
+  }
+  postQuery.then(documents => {
+    fetchedPosts = documents;
+    return Post.count();
+  }).then(count => {
     res.status(200).json({
       message: 'Posts fetched successfully',
-      posts: documents
+      posts: fetchedPosts, // we can't access to documents, is because we created a let fetchedPosts, and then equal to document
+      maxPosts: count
     });
   });
 });
