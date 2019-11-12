@@ -11,6 +11,7 @@ const Post = require('./models/post')
 
 // controllers
 const posts = require('./routes/posts');
+const users = require('./routes/users');
 
 mongoose.connect(
   process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }
@@ -42,5 +43,6 @@ app.use((req, res, next) => {
 //routes
 
 app.use('/api/posts', posts)
+app.use('/api/users', users)
 
 module.exports = app;
