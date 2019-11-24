@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
-import { PostsService } from '../../services/posts.service';
+import { PostsService } from '../../../services/posts.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Post } from '../../models/post.model';
+import { Post } from '../../../models/post.model';
 import { mimeType } from './mime-type.validator';
 
 @Component({
