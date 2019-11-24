@@ -14,7 +14,8 @@ const posts = require('./routes/posts');
 const users = require('./routes/users');
 
 mongoose.connect(
-  process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }
+  "mongodb+srv://db_escapadas:" + process.env.MONGODB_URI + "@cluster0-f72fw.mongodb.net/escapadas", 
+  { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
     console.log('Connected to the db!')
