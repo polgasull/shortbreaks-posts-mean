@@ -48,6 +48,11 @@ exports.createPost = (req, res, next) => {
     title: req.body.title,
     content: req.body.content,
     imagePath: url + "/images/" + req.file.filename,
+    city: req.body.city,
+    country: req.body.country,
+    productName: req.body.productName,
+    fromPrice: req.body.fromPrice,
+    externalLink: req.body.externalLink,
     creator: req.userData.userId
   });
   post.save().then(createdPost => {
@@ -77,6 +82,11 @@ exports.updatePost = (req, res, next) => {
     title: req.body.title, 
     content: req.body.content,
     imagePath: imagePath,
+    city: req.body.city,
+    country: req.body.country,
+    productName: req.body.productName,
+    fromPrice: req.body.fromPrice,
+    externalLink: req.body.externalLink,
     creator: req.userData.userId
   });
   Post.updateOne({ _id: req.params.id, creator: req.userData.userId }, post).then(result => {

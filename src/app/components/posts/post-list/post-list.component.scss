@@ -3,13 +3,13 @@
   display: block;
 }
 
-.post-card {
-  max-width: 400px;
+.post-list-container {
+  display: flex;
 }
 
-.post-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.post-card {
+  max-width: 400px;
+  margin: 0 15px;
 }
 
 .info-text {

@@ -27,6 +27,51 @@
       </textarea>
       <mat-error *ngIf="form.get('content').invalid">Content can't be empty</mat-error>
     </mat-form-field>
+    <mat-form-field>
+      <input 
+        matInput 
+        type="text" 
+        formControlName="city"
+        autocomplete="off" 
+        placeholder="City">
+      <mat-error *ngIf="form.get('city').invalid"> City can't be empty </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+        matInput 
+        type="text" 
+        formControlName="country"
+        autocomplete="off" 
+        placeholder="Country">
+      <mat-error *ngIf="form.get('country').invalid">Country can't be empty</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+        matInput 
+        type="text" 
+        formControlName="productName"
+        autocomplete="off" 
+        placeholder="Product Name">
+      <mat-error *ngIf="form.get('productName').invalid">Product name can't be empty</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+        matInput 
+        type="text" 
+        formControlName="fromPrice"
+        autocomplete="off" 
+        placeholder="From price">
+      <mat-error *ngIf="form.get('fromPrice').invalid">From price can't be empty</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+        matInput 
+        type="text" 
+        formControlName="externalLink"
+        autocomplete="off" 
+        placeholder="Link">
+      <mat-error *ngIf="form.get('externalLink').invalid">External Link can't be empty</mat-error>
+    </mat-form-field>
     <button mat-raised-button color="primary" type="submit"> Save Post </button>
   </form>
 </mat-card>

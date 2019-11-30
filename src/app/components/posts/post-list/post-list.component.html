@@ -15,12 +15,11 @@
     </mat-expansion-panel>
 </mat-accordion> -->
 
-<div *ngIf="posts.length > 0 && !isLoading">
+<div *ngIf="posts.length > 0 && !isLoading" class="post-list-container">
   <mat-card class="post-card" *ngFor="let post of posts">
     <mat-card-header>
-      <div mat-card-avatar class="post-header-image"></div>
       <mat-card-title> {{ post.title }} </mat-card-title>
-      <mat-card-subtitle>{{ post.title }}</mat-card-subtitle>
+      <mat-card-subtitle>{{ post.productName }}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image [src]="post.imagePath" [alt]="post.title">
     <mat-card-content>
@@ -28,6 +27,9 @@
         {{ post.content }}
       </p>
     </mat-card-content>
+    <mat-card-content> {{ post.city }} - {{ post.country }} </mat-card-content>
+    <mat-card-content> {{ post.fromPrice }} € </mat-card-content>
+    <a mat-raised-button href={{post.externalLink}} target="_blank">Ver Producto</a>
     <mat-card-actions *ngIf="userIsAuthenticated && userId == post.creator">
       <a mat-button color="primary" [routerLink]="['/edit', post.id]">Edit</a>
       <button mat-button color="warn" (click)="onDelete(post.id)">Delete</button>
