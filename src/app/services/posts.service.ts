@@ -95,16 +95,17 @@ export class PostsService {
     id: string,
     title: string,
     content: string,
+    image: File | string,
     city: string,
     country: string,
     productName: string,
     fromPrice: number,
-    externalLink: string,
-    image: File | string
+    externalLink: string
     ) {
     let postData: Post | FormData;
     if (typeof(image) === 'object') {
       postData = new FormData();
+      postData.append('id', id);
       postData.append('title', title);
       postData.append('content', content);
       postData.append('image', image, title);
