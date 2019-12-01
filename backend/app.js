@@ -34,7 +34,12 @@ if ( process.env.NODE_ENV === 'development' ) {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join("./backend/images")));
+
+if ( process.env.NODE_ENV === 'development' ) {
+  app.use("/images", express.static(path.join("./backend/images")));
+} else {
+  app.use("/images", express.static(path.join("images")));
+}
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

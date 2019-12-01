@@ -5,11 +5,13 @@
 
 .post-list-container {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .post-card {
   max-width: 400px;
-  margin: 0 15px;
+  margin: 0 15px 20px;
 }
 
 .info-text {
