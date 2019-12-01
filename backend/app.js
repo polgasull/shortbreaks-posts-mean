@@ -13,20 +13,28 @@ const Post = require('./models/post')
 const posts = require('./routes/posts');
 const users = require('./routes/users');
 
-mongoose.connect(
-  "mongodb+srv://db_escapadas:" + process.env.MONGODB_URI + "@cluster0-f72fw.mongodb.net/escapadas", 
-  { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+if ( process.env.NODE_ENV === 'development' ) {
+  mongoose.connect(process.env.LOCALDB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('Connected to the db!')
+    console.log('Connected to local db!')
   })
   .catch(() => {
     console.log('Connection failed!')
   });
+} else {
+  mongoose.connect("mongodb+srv://db_escapadas:" + process.env.MONGODB_URI + "@cluster0-f72fw.mongodb.net/escapadas", 
+  { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to production db!')
+  })
+  .catch(() => {
+    console.log('Connection failed!')
+  });
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join("images")));
+app.use("/images", express.static(path.join("./backend/images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
