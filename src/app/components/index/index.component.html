@@ -3,7 +3,7 @@
     <h1><span>Un sólo sitio. Miles de escapadas.<br/>
     Entra y descúbrelas</span></h1>
     <div>
-      <a routerLink="/posts" class="access-button">Entrar</a>
+      <a routerLink="/posts" class="access-button">Acceder</a>
     </div>
   </div>
 </section>
@@ -26,24 +26,22 @@
   <div class="inner">
     <article>
       <div class="content">
+        <fa-icon [icon]="faUser"></fa-icon>
         <header>
-          <h3> Atención al cliente </h3>
+          <h3> Usuarios </h3>
         </header>
-        <div class="image fit">
-          <img src="../../../assets/images/pic06.jpg" alt="" />
-        </div>
-        <p> Estamos a tu disposición para ayudarte con cualquier duda o consulta.</p>
+        <p> Sin registros. Entra y descubre las mejores escapadas del momento. </p>
+        <a routerLink="/posts" class="link-btn">Acceder</a>
       </div>
     </article>
     <article class="alt">
       <div class="content">
+        <fa-icon [icon]="faHandshake"></fa-icon>
         <header>
-          <h3> Partners TOP </h3>
+          <h3> Colaboradores </h3>
         </header>
-        <div class="image fit">
-          <img src="../../../assets/images/pic09.jpg" alt="" />
-        </div>
-        <p> Nos esforzamos para mostrarte las mejores opciones del mercado para que disfrutes de la mejor experiencia.</p>
+        <p> ¿Estás interesado en publicar tus escapadas?. Regístrate y empieza a ganar visibilidad hoy mismo. </p>
+        <a routerLink="/auth/login" class="link-btn">Crear cuenta</a>
       </div>
     </article>
   </div>
@@ -54,7 +52,6 @@
   <div class="inner">
     <article>
       <div class="content">
-        <span class="icon fa-laptop"></span>
         <header>
           <h3> Atención al cliente </h3>
         </header>
@@ -63,7 +60,6 @@
     </article>
     <article>
       <div class="content">
-        <span class="icon fa-diamond"></span>
         <header>
           <h3> Catálogo actualizado </h3>
         </header>
@@ -72,11 +68,10 @@
     </article>
     <article>
     <div class="content">
-        <span class="icon fa-laptop"></span>
         <header>
-          <h3> Colaboradores TOP </h3>
+          <h3> Confianza </h3>
         </header>
-        <p> Todos nuestros colaboradores estàn verificados y cumplen con las garantías de calidad.</p>
+        <p> Todos nuestros colaboradores están verificados y cumplen con las garantías de calidad.</p>
       </div>
     </article>
   </div>
@@ -102,7 +97,7 @@
         <textarea name="message" id="message" rows="6"></textarea>
       </div>
       <ul class="actions">
-        <li><input type="submit" value="Send Message" class="alt" /></li>
+        <li><input type="submit" value="Enviar mensaje" class="alt" /></li>
       </ul>
     </form>
     <div class="copyright">

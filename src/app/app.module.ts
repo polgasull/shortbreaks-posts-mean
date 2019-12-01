@@ -12,6 +12,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { PostsModule } from './components/posts/posts.module';
 import { IndexComponent } from './components/index/index.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { IndexComponent } from './components/index/index.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
-    PostsModule
+    PostsModule,
+    FontAwesomeModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

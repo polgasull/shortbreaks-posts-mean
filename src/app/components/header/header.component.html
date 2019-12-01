@@ -1,9 +1,9 @@
 <mat-toolbar>
-  <span> <a routerLink="/"> Escapadas </a> </span>
+  <span> <a routerLink="/"> Escapadas.io </a> </span>
   <span class="spacer"></span>
   <ul>
     <li *ngIf="userIsAuthenticated">
-      <a mat-button routerLink="/create" routerLinkActive="mat-primary">Nueva escapada</a>
+      <a mat-button routerLink="/create" routerLinkActive="mat-primary">Publicar</a>
     </li>
     <li *ngIf="!userIsAuthenticated">
       <a mat-button routerLink="/auth/login" routerLinkActive="mat-primary">Iniciar sesión</a>
