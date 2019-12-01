@@ -11,12 +11,14 @@ import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './components/error/error.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { PostsModule } from './components/posts/posts.module';
+import { IndexComponent } from './components/index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ErrorComponent
+    ErrorComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
