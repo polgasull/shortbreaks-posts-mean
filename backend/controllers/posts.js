@@ -43,7 +43,7 @@ exports.getPost = (req, res, next) => {
 }
 
 exports.createPost = (req, res, next) => {
-  const url = req.secure + '://' + req.get("host");
+  const url = 'https://' + req.get("host");
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
@@ -74,7 +74,7 @@ exports.createPost = (req, res, next) => {
 exports.updatePost = (req, res, next) => {
   let imagePath = req.body.imagePath;
   if (req.file) {
-    const url = req.secure + '://' + req.get("host");
+    const url = 'https://' + req.get("host");
     imagePath = url + "/images/" + req.file.filename
   }
   const post = new Post({
