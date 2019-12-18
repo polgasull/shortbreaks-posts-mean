@@ -12,4 +12,6 @@ const postSchema = mongoose.Schema({
   creator: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
 });
 
+postSchema.set('timestamps', true);
+
 module.exports = mongoose.model('Post', postSchema);

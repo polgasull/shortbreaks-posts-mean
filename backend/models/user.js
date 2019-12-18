@@ -7,5 +7,6 @@ const userSchema = mongoose.Schema({
 });
 
 userSchema.plugin(uniqueValidator);
+userSchema.set('timestamps', true);
 
 module.exports = mongoose.model('User', userSchema);

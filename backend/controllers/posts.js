@@ -3,7 +3,7 @@ const Post = require('../models/post');
 exports.getPosts = (req, res, next) => {
   const pageSize = +req.query.pagesize; // + symbol converts string to number. 
   const currentPage = +req.query.page;
-  const postQuery = Post.find();
+  const postQuery = Post.find().sort({createdAt: -1});
   let fetchedPosts;
   if (pageSize && postQuery) {
     postQuery
@@ -43,7 +43,7 @@ exports.getPost = (req, res, next) => {
 }
 
 exports.createPost = (req, res, next) => {
-  const url = 'https://' + req.get("host");
+  const url = 'https' + '://' + req.get("host");
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
@@ -74,7 +74,8 @@ exports.createPost = (req, res, next) => {
 exports.updatePost = (req, res, next) => {
   let imagePath = req.body.imagePath;
   if (req.file) {
-    const url = 'https://' + req.get("host");
+    const url = 'https' + '://' + req.get("host");
+    console.log(protocol)
     imagePath = url + "/images/" + req.file.filename
   }
   const post = new Post({

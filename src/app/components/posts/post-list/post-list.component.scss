@@ -34,3 +34,9 @@ mat-spinner {
 mat-paginator {
   margin-top: 1rem;
 }
+
+.crop-image {
+  height: 300px; /* height of container */
+  overflow: hidden;
+  margin: 0 -16px 16px -16px;
+}

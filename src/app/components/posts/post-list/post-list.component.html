@@ -8,7 +8,9 @@
         <mat-card-title> {{ post.title }} </mat-card-title>
         <mat-card-subtitle>{{ post.productName }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="post.imagePath" [alt]="post.title">
+      <div class="crop-image">
+        <img mat-card-image [src]="post.imagePath" [alt]="post.title">
+      </div>
       <mat-card-content>
         <p>
           {{ post.content }}
