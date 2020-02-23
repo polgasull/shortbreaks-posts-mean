@@ -1,6 +1,7 @@
 <div class="m-b-40"></div>
 
 <main>
+  <h1> Las mejores ofertas para escapadas </h1>
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <div *ngIf="posts.length > 0 && !isLoading" class="post-list-container">
     <mat-card class="post-card" *ngFor="let post of posts">

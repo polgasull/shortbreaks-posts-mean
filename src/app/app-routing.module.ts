@@ -6,8 +6,8 @@ import { PostCreateComponent } from './components/posts/post-create/post-create.
 import { AuthGuard } from './components/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: IndexComponent },
-  { path: 'posts', component: PostListComponent },
+  { path: '', component: PostListComponent },
+  { path: 'about-us', component: IndexComponent },
   { path: 'create', component: PostCreateComponent, canActivate: [AuthGuard] },
   { path: 'edit/:postId', component: PostCreateComponent , canActivate: [AuthGuard] },
   { path: 'auth', loadChildren: './components/auth/auth.module#AuthModule' }

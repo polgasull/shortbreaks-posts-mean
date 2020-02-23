@@ -2,14 +2,11 @@
   <span> <a routerLink="/"> Escapadas.io </a> </span>
   <span class="spacer"></span>
   <ul>
+    <li>
+      <a mat-button routerLink="/about-us" routerLinkActive="mat-primary"> Sobre nosotros </a>
+    </li>
     <li *ngIf="userIsAuthenticated">
       <a mat-button routerLink="/create" routerLinkActive="mat-primary">Publicar</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/login" routerLinkActive="mat-primary">Iniciar sesión</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-primary">Crear cuenta</a>
     </li>
     <li *ngIf="userIsAuthenticated">
       <button mat-button (click)="onLogout()">Cerrar sesión</button>

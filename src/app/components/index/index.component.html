@@ -3,7 +3,7 @@
     <h1><span>Un sólo sitio. Miles de escapadas.<br/>
     Entra y descúbrelas</span></h1>
     <div>
-      <a routerLink="/posts" class="access-button">Acceder</a>
+      <a routerLink="/posts" class="access-button">¡Ver ofertas!</a>
     </div>
   </div>
 </section>
@@ -28,20 +28,20 @@
       <div class="content">
         <fa-icon [icon]="faUser"></fa-icon>
         <header>
-          <h3> Usuarios </h3>
+          <h3> Miembros </h3>
         </header>
-        <p> Sin registros. Entra y descubre las mejores escapadas del momento. </p>
-        <a routerLink="/posts" class="link-btn">Acceder</a>
+        <p> Entra y gestiona tus publicaciones. </p>
+        <a routerLink="/auth/login" class="link-btn">Iniciar Sesión </a>
       </div>
     </article>
     <article class="alt">
       <div class="content">
         <fa-icon [icon]="faHandshake"></fa-icon>
         <header>
-          <h3> Colaboradores </h3>
+          <h3> ¡Regístrate! </h3>
         </header>
-        <p> ¿Estás interesado en publicar tus escapadas?. Regístrate y empieza a ganar visibilidad hoy mismo. </p>
-        <a routerLink="/auth/login" class="link-btn">Crear cuenta</a>
+        <p> Regístrate y empieza a ganar visibilidad hoy mismo. </p>
+        <a routerLink="/auth/signup" class="link-btn">Crear cuenta</a>
       </div>
     </article>
   </div>
